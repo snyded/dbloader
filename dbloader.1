@@ -1,0 +1,46 @@
+.\"
+.\" @(#) dbloader.1 1.4  94/09/25 12:08:03
+.\"
+.TH DBLOADER 1 "dbloader 1.4"
+.SH NAME
+dbloader, dbunloader \- generates "load/unload" statements
+.SH SYNOPSIS
+dbloader \-d dbname [\-t tabname] [\-e] [filename]
+.br
+dbunloader \-d dbname [\-t tabname] [\-s [\-l]] [\-e] [filename]
+.SH DESCRIPTION
+.I Dbloader
+will generate SQL "load" statements for Informix database tables.
+.I Dbunloader
+will generate SQL "unload" statements for Informix database tables.
+If the optional filename is not specified, stdout is used.
+.SH OPTIONS
+.TP
+.B \-d
+database name
+.TP
+.B \-t
+table name
+.TP
+.B \-s
+generates additional SQL statements for shared table locking
+(dbunloader only)
+.TP
+.B \-l
+generates even more SQL statements for databases with transactions
+(available only with the -s option)
+.TP
+.B \-e
+explode the SQL statements to show all columns
+.TP
+filename is the name of the file that the SQL statements go in
+.SH NOTES
+.I Dbloader
+requires that an Informix database engine be installed on the machine
+running it.
+.PP
+If a table name is not specified, the entire database is used.
+.PP
+Wild-card characters may be used in the table name if desired.
+.SH SUPPORT
+Send bug reports to Dave Snyder <dave@snide.com>

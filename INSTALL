@@ -1,0 +1,3 @@
+Edit the makefile and select a compiler to use (esql or c4gl).  Also, select
+how to "link" dbloader to dbunloader (ln or cp).
+Type: make
